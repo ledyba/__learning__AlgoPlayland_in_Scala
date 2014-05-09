@@ -1,7 +1,7 @@
-name := "Sample"
- 
+name := "Algo"
+
 version := "1.0"
- 
+
 scalaVersion := "2.10.1"
 
 resolvers ++= Seq(
