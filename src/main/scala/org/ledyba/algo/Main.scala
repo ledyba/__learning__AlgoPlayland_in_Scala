@@ -10,20 +10,9 @@ import scala.util.matching.Regex
 import scala.util.matching.Regex
 import org.junit.Assert
 import Function.tupled;
+import Util.shuffle;
 
 object Main {
-	def shuffle(array:Array[Int]):Array[Int] = {
-		val r = new Random();
-		def swap( i:Int, j:Int ) = {
-			val t = array(i);
-			array(i) = array(j);
-			array(j) = t;
-		}
-		for(i <- Range(0, array.length-1)){
-			swap(i, r.nextInt(array.length-i)+i);
-		}
-		array
-	}
 	def main(args:Array[String]):Unit = {
 		val r = new Random();
 		val dat = shuffle(Range(0, 10).toArray)
@@ -35,6 +24,7 @@ object Main {
 		println( "counting: " + countingSort(dat, dat.length-1).mkString(",") )
 		println( "bucket  : " + bucketSort(dat, dat.length-1).mkString(",") )
 		//codeJam();
+		
 	}
 	def swap(dat:Array[Int], i:Int, j:Int):Unit = {
 		val t = dat(i);
